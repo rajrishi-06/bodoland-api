@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: flask-ml-api
+    env: python
+    plan: free
+    runtime: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    autoDeploy: true
